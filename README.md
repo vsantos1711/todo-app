@@ -2,7 +2,14 @@
 
 # A basic to-do app
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This is a simple to-do app created to improve my skills using Laravel as a full-stack framework, along with Tailwind CSS for styling. With this project, I aim to gain hands-on experience in building a web application from scratch, implementing basic CRUD operations, user authentication, and responsive design. By working on this project, I hope to enhance my understanding of Laravel's capabilities and best practices in web development.
+
+# Technologies
+
+[<img src="https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" />](https://laravel.com/)
+[<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />](https://tailwindcss.com/)
+[<img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens"/>](https://jwt.io/)
+[<img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white"/>](https://vitejs.dev/)
 
 # Running the app
 
