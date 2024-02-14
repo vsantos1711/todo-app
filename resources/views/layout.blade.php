@@ -13,11 +13,11 @@
 </head>
 
 <body class="bg-gray-900 text-slate-200 dark:bg-dots-lighter">
-    @include('header')
+    @include('layouts.header')
+
     <main class="min-h-screen">
         @yield('create-task-form')
     </main>
 </body>
 
 </html>
-a
