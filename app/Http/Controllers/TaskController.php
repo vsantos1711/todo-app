@@ -10,6 +10,11 @@ class TaskController extends Controller
         return view('task.create');
     }
 
+    public function listAll() {
+        $tasks = Task::all();
+        return view('task.list', compact('tasks'));
+    }
+
     public function store(Request $request) {
         $this->validate($request, [
             'title' => 'required|min:4|max:50',
@@ -22,6 +27,6 @@ class TaskController extends Controller
 
         if(!$task) return back()->with('error', 'Failed to create task');
 
-        return back()->with('success', 'Task created successfully');
+        return redirect()->route('task.list')->with('success', 'Task created successfully');
     }
 }
