@@ -37,8 +37,32 @@
                         {{$task->title}}</td>
                     <td class="px-4 py-3 text-lg font-normal text-left border-r border-gray-700">{{$task->description}}
                     </td>
-                    <td class="px-2 py-3 text-base font-normal text-left border-r border-gray-700">
-                        {{$task->status}}</td>
+                    <td class="text-base font-normal text-center border-r border-gray-700">
+                        @switch($task->status)
+                        @case('BACKLOG')
+                        <span
+                            class="px-4 py-1.5 font-medium text-blue-600 bg-blue-500/10 rounded">{{$task->status}}</span>
+                        @break
+
+                        @case('IN_TEST')
+                        <span class="px-4 py-1.5 font-medium text-purple-600 bg-purple-500/10 rounded">IN TEST</span>
+                        @break
+
+                        @case('IN_PROGRESS')
+                        <span class="px-4 py-1.5 font-medium text-yellow-600 bg-yellow-500/10 rounded">IN
+                            PROGRESS</span>
+                        @break
+
+                        @case('DEPLOYED')
+                        <span
+                            class="px-4 py-1.5 font-medium text-green-600 bg-green-500/10 rounded">{{$task->status}}</span>
+                        @break
+
+                        @default
+                        <span
+                            class="px-4 py-1.5 font-medium text-blue-600 bg-blue-500/10 rounded">{{$task->status}}</span>
+                        @endswitch
+                    </td>
                     <td>
                         <form action="{{route('task.delete', $task->id)}}" method="POST"
                             class="flex items-center justify-center gap-4 py-3">

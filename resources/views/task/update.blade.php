@@ -21,8 +21,30 @@
             <textarea id="description" name="description" placeholder="A short description..."
                 class="p-2 rounded bg-slate-600">{{$task->description}}</textarea>
 
-            <button type="submit"
-                class="px-2 py-1 mt-2 font-bold transition rounded bg-emerald-700 max-w-32 hover:bg-emerald-600">Save!</button>
+
+            <label for="status">STATUS</label>
+            <select name="status" id="status" class="p-2 rounded bg-slate-600">
+
+                <option value="BACKLOG" class="font-bold ">
+                    BACKLOG
+                </option>
+
+                <option value="IN_TEST" class="font-bold ">
+                    IN TEST
+                </option>
+
+                <option value="IN_PROGRESS" class="font-bold">
+                    PROGRESS
+                </option>
+
+                <option value="DEPLOYED" class="font-bold">
+                    DEPLOYED
+                </option>
+
+            </select>
+            <button type=" submit"
+                class="px-2 py-1 mt-2 font-bold transition rounded bg-emerald-700 max-w-32 hover:bg-emerald-600">
+                Save!</button>
         </div>
 
     </div>

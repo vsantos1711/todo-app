@@ -47,6 +47,7 @@ class TaskController extends Controller
 
         $task->title = $request->title;
         $task->description = $request->description;
+        $task->status = $request->status;
         $task->save();
 
         return redirect()->route('task.list')->with('success', 'Task updated successfully');
