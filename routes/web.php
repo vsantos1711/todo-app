@@ -15,7 +15,11 @@ use App\Http\Controllers\TaskController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/task/create');
 });
 
-Route::get('/task/create', [TaskController::class, 'create']);
+Route::prefix('/task')->group(function () {
+    Route::get('/create', [TaskController::class, 'create']);
+    Route::post('/store', [TaskController::class, 'store'])->name('task.store');
+});
+
