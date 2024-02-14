@@ -15,8 +15,10 @@
 <body class="bg-gray-900 text-slate-200 dark:bg-dots-lighter">
     @include('layouts.header')
 
-    <main class="min-h-screen">
+    <main class="min-h-screen mb-2">
         @yield('create-task-form')
+        @yield('update-task-form')
+        @yield('list-tasks')
     </main>
 </body>
 
