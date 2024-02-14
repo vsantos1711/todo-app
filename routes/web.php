@@ -19,5 +19,7 @@ Route::controller(TaskController::class)->group(function () {
     Route::get('/', 'listAll')->name('task.list');;
     Route::get('/task/create','create')->name('task.create');;
     Route::post('/task/store','store')->name('task.store');
+    Route::get('/task/update/{id}','update')->name('task.update');
+    Route::put('/task/edit/{id}','edit')->name('task.edit');
 });
 
