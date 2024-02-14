@@ -23,9 +23,9 @@
                 class="px-2 py-1 mt-2 transition rounded bg-emerald-700 max-w-32 hover:bg-emerald-600">Create</button>
         </div>
         @if(session('success'))
-        @include('components.successToast')
+        @include('components.toast.success')
         @elseif(session('error'))
-        @include('components.errorToast')
+        @include('components.toast.error')
         @endif
     </div>
 </form>
