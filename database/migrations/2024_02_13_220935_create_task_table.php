@@ -18,8 +18,8 @@ return new class extends Migration
             $table->enum('status', [
                 'BACKLOG',
                 'IN_PROGRESS',
-                'WAITING_CUSTOMER_APPROVAL',
-                'APPROVED',
+                'IN_TEST',
+                'DEPLOYED',
             ])->default('BACKLOG');
             $table->timestamps();
         });
