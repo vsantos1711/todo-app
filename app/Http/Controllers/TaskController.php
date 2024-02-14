@@ -29,4 +29,26 @@ class TaskController extends Controller
 
         return redirect()->route('task.list')->with('success', 'Task created successfully');
     }
+
+    public function update (string $id) {
+        $task = Task::find($id);
+        if(!$task) return back()->with('error', 'Task not found');
+
+        return view('task.update', compact('task'));
+    }
+
+    public function edit (Request $request, string $id ) {
+        $task = Task::find($id);
+        if(!$task) return back()->with('error', 'Task not found');
+
+        $this->validate($request, [
+            'title' => 'required|min:4|max:50',
+        ]);
+
+        $task->title = $request->title;
+        $task->description = $request->description;
+        $task->save();
+
+        return redirect()->route('task.list')->with('success', 'Task updated successfully');
+    }
 }
