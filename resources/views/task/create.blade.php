@@ -20,13 +20,9 @@
                 class="p-2 rounded bg-slate-600 "></textarea>
 
             <button type="submit"
-                class="px-2 py-1 mt-2 transition rounded bg-emerald-700 max-w-32 hover:bg-emerald-600">Create</button>
+                class="px-2 py-1 mt-2 font-bold transition rounded bg-emerald-700 max-w-32 hover:bg-emerald-600">Create</button>
         </div>
-        @if(session('success'))
-        @include('components.toast.success')
-        @elseif(session('error'))
-        @include('components.toast.error')
-        @endif
+
     </div>
 </form>
 @endsection
