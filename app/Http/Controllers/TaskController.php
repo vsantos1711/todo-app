@@ -15,9 +15,13 @@ class TaskController extends Controller
             'title' => 'required|min:4|max:50',
         ]);
 
-        Task::create([
+        $task = Task::create([
             'title' => $request->title,
             'description' => $request->description,
         ]);
+
+        if(!$task) return back()->with('error', 'Failed to create task');
+
+        return back()->with('success', 'Task created successfully');
     }
 }
