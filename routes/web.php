@@ -14,12 +14,10 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/task/create');
-});
 
-Route::prefix('/task')->group(function () {
-    Route::get('/create', [TaskController::class, 'create']);
-    Route::post('/store', [TaskController::class, 'store'])->name('task.store');
+Route::controller(TaskController::class)->group(function () {
+    Route::get('/', 'listAll')->name('task.list');;
+    Route::get('/task/create','create')->name('task.create');;
+    Route::post('/task/store','store')->name('task.store');
 });
 
