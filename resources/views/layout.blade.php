@@ -19,6 +19,7 @@
         @yield('create-task-form')
         @yield('update-task-form')
         @yield('user-login')
+        @yield('user-register')
         @yield('list-tasks')
     </main>
 </body>
