@@ -22,6 +22,8 @@
         @yield('user-register')
         @yield('list-tasks')
     </main>
+
+    @include('layouts.footer')
 </body>
 
 </html>
