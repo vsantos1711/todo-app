@@ -1,8 +1,7 @@
 @extends('layout')
 
 @section('list-tasks')
-<div class="container flex flex-col gap-2">
-
+<div class="container flex flex-col gap-2 my-8">
     <div class="flex items-center justify-between w-full my-2 min-h-14">
         <div>
             @if(session('success'))
