@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,14 @@ use App\Http\Controllers\TaskController;
 */
 
 
+Route::controller(UserController::class)->group(function () {
+    Route::get('/', 'login')->name('user.login');
+    Route::get('/user/create', 'create')->name('user.create');
+
+});
+
 Route::controller(TaskController::class)->group(function () {
-    Route::get('/', 'listAll')->name('task.list');;
+    Route::get('/tasks', 'listAll')->name('task.list');;
     Route::get('/task/create','create')->name('task.create');;
     Route::post('/task/store','store')->name('task.store');
     Route::get('/task/update/{id}','update')->name('task.update');
