@@ -1,11 +1,29 @@
-version: "3.3"
+version: "3.8"
 services:
-    db:
-        image: mysql
+    # Laravel Application
+    laravel:
+        build:
+            context: .
+            target: php
+            args:
+                - APP_ENV=${APP_ENV}
+        environment:
+            - CONTAINER_ROLE=app
+        working_dir: /var/www
+        volumes:
+            - .:/var/www
+        ports:
+            - 8000:8000
+        depends_on:
+            - database
+        # command: npm run dev -- --host (not sure if this is needed)
+    # MYSQL Database
+    database:
+        image: mysql:8.0
+        ports:
+            - 3306:3306
         restart: always
         environment:
-            MYSQL_DATABASE: "todoapp"
-            MYSQL_USER: "user"
-            MYSQL_ROOT_PASSWORD: "password"
-        ports:
-            - "3306:3306"
+            - MYSQL_DATABASE="${DB_DATABASE}"
+            - MYSQL_USER="${DB_USERNAME}"
+            - MYSQL_ROOT_PASSWORD="${DB_PASSWORD}"
