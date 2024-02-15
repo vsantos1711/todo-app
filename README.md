@@ -25,7 +25,6 @@ $ docker-compose up -d
 ## PHP Server
 
 ```bash
-# Rename .env.example to .env
 # Run the following commands in the project root
 # Remember to configure the database and edit .env
 
